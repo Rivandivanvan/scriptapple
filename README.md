@@ -1,7 +1,5 @@
 
  cat <<EOF
-$banner = "
-   \e[92m |
      ____   ____                      .___ __      .___
 \   \ /   /____    ____        __| _//  |_  __| _/
  \   Y   /\__  \  /    \      / __ |\   __\/ __ | 
@@ -10,8 +8,6 @@ $banner = "
                \/     \/  \/      \/           \/ 
 
                                                                          
-               \e[92mApple Valid Email Checker CLI Version 2018\033[0m \e[93mV.1.0\033[0m 
-                         \e[92mAuthor : \033[0m\e[93mRIVANDI APRILIANTO
 EOF
  
 usage() {
@@ -188,8 +184,7 @@ totalLines=`grep -c "@" $inputFile`
 echo "There are $totalLines of list."
 echo " "
 echo "Hotmail: `grep -c "@hotmail" $inputFile`"
-echo "Yahoo: `grep -c "@yahoo" $inputFile`"
-echo "Gmail: `grep -c "@gmail" $inputFile`"
+echo "Aol: `grep -c "@aol" $inputFile`"
 echo "########################################"
  
 # Extract email per line
