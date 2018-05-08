@@ -41,7 +41,7 @@ updater() {
  
   if [[ $localShellCode != $cloudShellCode ]]; then
     echo "Updating script... Please wait."
-    wget "http://github.com/Rivandivanvan/scriptapple/bit.txt"; rm -f $0; mv bit.txt $0; chmod +x $0
+    wget "http://github.com/Rivandivanvan/scriptapple"; rm -f $0; mv bit.txt $0; chmod +x $0
     echo "File successfully updated on `date`."
   else
     echo "Script are up to date"
