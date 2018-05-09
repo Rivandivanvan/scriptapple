@@ -9,7 +9,7 @@ NC='\033[0m'
 
 cat <<EOF
 ---------------------------------------------------
-              AppleID Validator 2017
+              AppleID Validator 2018
 ---------------------------------------------------
 
 EOF
@@ -37,11 +37,11 @@ Options:
 updater() {
   echo "Checking integrity file to server..."
   localShellCode=`cat $0 | sha256sum`
-  cloudShellCode=`curl "http://github.com/scriptapple/bit.txt" -s | sha256sum`
+  cloudShellCode=`curl "https://github.com/Rivandivanvan/scriptapple" -s | sha256sum`
 
   if [[ $localShellCode != $cloudShellCode ]]; then
     echo "Updating script... Please wait."
-    wget "http://tikungcode.com/appleval/bit.txt"; rm -f $0; mv bit.txt $0; chmod +x $0
+    wget "https://github.com/Rivandivanvan/scriptapple"; rm -f $0; mv scriptapple.txt $0; chmod +x $0
     echo "File successfully updated on `date`."
   else
     echo "Script are up to date"
@@ -146,12 +146,12 @@ fi
 
 
 
-panda_appleval() {
+vandtd_apple() {
   SECONDS=0
   check=`curl 'https://appleid.apple.com/account/validation/appleid' -H 'scnt: '$scnt' ' -H 'Origin: https://appleid.apple.com' -H 'Accept-Encoding: gzip, deflate, br' -H 'X-Apple-I-FD-Client-Info: {"U":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.81 Safari/537.36","L":"en-US","Z":"GMT+08:00","V":"1.1","F":"F8a44j1e3NlY5BSo9z4ofjb75PaK4Vpjt4U_98uszHVyVxFAk.lzXJJIneGffLMC7EZ3QHPBirTYKUowRslzRQqwSM2YSQTPNKSgydUPm8LKfAaZ4pAJZ7OQuyPBB2SCXw2SCWRUdFUFTc4s.QuyPB94UXuGlfUm9z9JIply_0x0uVMV0Yz3ccbbJYMLgiPFU77qZoOSix5ezdstlYysrhsui65uqwokevOxHypZHgfLMC7Awvw0BpUMnGWmccbhdqTK43xbJlpMpwoNSUC56MnGWpwoNHHACVZXnN9NW2quaud01lpi.uJtHoqvynx9MsFyxYM914Ygh5DsTpw.Tf5.EKXJtJdmX3ivojkxbsJz3YMJ5tI.KUfpKSELtTclY5BSp.5BNlan0Os5Apw.C7U"}' -H 'Accept-Language: en-US,en;q=0.8,id;q=0.6,fr;q=0.4' -H 'X-Requested-With: XMLHttpRequest' -H 'Cookie: aid='$sessionId'; ccl=KFbl40Od3yW1Xe5+mG394w==; geo=ID; idclient=web; dslang=US-EN; site=USA' -H 'Connection: keep-alive' -H 'X-Apple-Api-Key: '$apiKey' ' -H 'X-Apple-ID-Session-Id: '$sessionId' ' -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.81 Safari/537.36' -H 'Content-Type: application/json' -H 'Accept: application/json, text/javascript, */*; q=0.01' -H 'Referer: https://appleid.apple.com/account' -H 'X-Apple-Request-Context: create' --data-binary '{"emailAddress":"'$1'"}' --compressed -D - -s`
   duration=$SECONDS
   header="`date +%H:%M:%S` from $inputFile to $targetFolder"
-  footer="[Mata Panda] $(($duration % 60))sec.\n"
+  footer="[Vandtd] $(($duration % 60))sec.\n"
   val="$(echo "$check" | grep -c 'used" : true')"
   inv="$(echo "$check" | grep -c 'used" : false')"
   icl="$(echo "$check" | grep -c 'appleOwnedDomain" : true')"
